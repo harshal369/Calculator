@@ -155,11 +155,10 @@ const Cal = () =>{
 
     return(
         <div className="cal-comp">
-            <div className="cal-button-wrapper">
+        <div className="cal-button-wrapper">
             
             <input type="number" value={currentExp} />
-        
-        <ButtonMaker calButton={calButton}/>
+            <ButtonMaker calButton={calButton}/>
         </div>
         </div>
     
