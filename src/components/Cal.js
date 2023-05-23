@@ -108,7 +108,7 @@ const Cal = () =>{
         {
             value:".",
             calFun:()=>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString() )    );
+                console.log("point called");
             }
         },
         {
