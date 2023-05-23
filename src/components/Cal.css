@@ -1,0 +1,23 @@
+.cal-comp {
+    border: 1px solid rgb(124, 184, 176);
+    height: 703px;
+    
+}
+
+.cal-button-wrapper {
+    width: 20%;
+    height: 143px;
+    border: 1px solid grey;
+    margin: 90px 0 0 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.cal-button-row {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+
+}

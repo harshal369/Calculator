@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './App.scss';
 
+import './App.scss';
+import Cal from './components/Cal';
 
 
 
@@ -8,6 +8,8 @@ function App() {
   return (
     <div className="App">
       
+      <Cal />
+
     </div>
   );
 }
