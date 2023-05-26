@@ -12,19 +12,20 @@ const Cal = () =>{
         {
             value : 1,
             calFun: () =>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString()+1)    );
+                console.log(currentExp)
+                setCurrentExp( (prevState)=>   prevState.toString()+1)    ;
              }
         },
         {
             value:2,
             calFun:()=>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString()+2)    );
+                setCurrentExp( (prevState)=>   prevState.toString()+2)    ;
             }
         },
         {
             value:3,
             calFun:()=>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString()+3)    );
+                setCurrentExp( (prevState)=>  parseFloat( prevState.toString()+3)    );
             }
         },
         {
@@ -40,19 +41,19 @@ const Cal = () =>{
         {
             value : 4,
             calFun: () =>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString()+4)    );
+                setCurrentExp( (prevState)=>  parseFloat( prevState.toString()+4)    );
              }
         },
         {
             value:5,
             calFun:()=>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString()+5)    );
+                setCurrentExp( (prevState)=>  parseFloat( prevState.toString()+5)    );
             }
         },
         {
             value:6,
             calFun:()=>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString()+6)    );   
+                setCurrentExp( (prevState)=>  parseFloat( prevState.toString()+6)    );   
             }
         },
         {
@@ -68,19 +69,19 @@ const Cal = () =>{
         {
             value : 7,
             calFun: () =>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString()+7)    );
+                setCurrentExp( (prevState)=>  parseFloat( prevState.toString()+7)    );
              }
         },
         {
             value:8,
             calFun:()=>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString()+8)    );
+                setCurrentExp( (prevState)=>  parseFloat( prevState.toString()+8)    );
             }
         },
         {
             value:9,
             calFun:()=>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString()+9)    ); 
+                setCurrentExp( (prevState)=>  parseFloat( prevState.toString()+9)    ); 
             }
         },
         {
@@ -102,13 +103,20 @@ const Cal = () =>{
         {
             value:0,
             calFun:()=>{
-                setCurrentExp( (prevState)=>  parseInt( prevState.toString()+0)    );
+                setCurrentExp( (prevState)=>  parseFloat( prevState.toString()+0)    );
             }
         },
         {
             value:".",
             calFun:()=>{
-                console.log("point called");
+
+                setCurrentExp( (prevState)=>  {
+                    const addV = prevState.toString()+ ".";
+                    console.log("addv",addV)
+                    //  const newValue =  parseFloat( addV )
+                    //  console.log('newValue', newValue);
+                     return addV;
+                }    ); 
             }
         },
         {
@@ -126,7 +134,7 @@ const Cal = () =>{
             value:"=",
             calFun:()=>{
                     if(currentOperation === "+"){
-                            setCurrentExp(saveValue + currentExp);
+                            setCurrentExp(parseFloat(saveValue) + parseFloat(currentExp));
                         
                     }else if(currentOperation === "-"){
                             setCurrentExp(saveValue - currentExp);
@@ -157,7 +165,7 @@ const Cal = () =>{
         <div className="cal-comp">
         <div className="cal-button-wrapper">
             
-            <input type="number" value={currentExp} />
+            <input type="text" value={currentExp} />
             <ButtonMaker calButton={calButton}/>
         </div>
         </div>
