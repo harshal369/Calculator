@@ -13,13 +13,13 @@ const Cal = () =>{
             value : 1,
             calFun: () =>{
                 console.log(currentExp)
-                setCurrentExp( (prevState)=>   prevState.toString()+1)    ;
+                setCurrentExp( (prevState)=>  parseFloat( prevState.toString()+1) )   ;
              }
         },
         {
             value:2,
             calFun:()=>{
-                setCurrentExp( (prevState)=>   prevState.toString()+2)    ;
+                setCurrentExp( (prevState)=>   parseFloat( prevState.toString()+2) )    ;
             }
         },
         {
@@ -110,13 +110,7 @@ const Cal = () =>{
             value:".",
             calFun:()=>{
 
-                setCurrentExp( (prevState)=>  {
-                    const addV = prevState.toString()+ ".";
-                    console.log("addv",addV)
-                    //  const newValue =  parseFloat( addV )
-                    //  console.log('newValue', newValue);
-                     return addV;
-                }    ); 
+                setCurrentExp( (prevState)=> prevState.toString()+ "."    ); 
             }
         },
         {
@@ -134,16 +128,16 @@ const Cal = () =>{
             value:"=",
             calFun:()=>{
                     if(currentOperation === "+"){
-                            setCurrentExp(parseFloat(saveValue) + parseFloat(currentExp));
+                            setCurrentExp(parseFloat(saveValue) + parseFloat(currentExp) );
                         
                     }else if(currentOperation === "-"){
-                            setCurrentExp(saveValue - currentExp);
+                            setCurrentExp(parseFloat(saveValue) - parseFloat(currentExp) );
                             
                     }else if(currentOperation === "*"){
-                        setCurrentExp(saveValue * currentExp);
+                        setCurrentExp(parseFloat(saveValue) * parseFloat(currentExp) );
 
                     }else if(currentOperation === "/"){
-                        setCurrentExp(saveValue / currentExp);
+                        setCurrentExp(parseFloat(saveValue) / parseFloat(currentExp) );
 
                     }
                 }
