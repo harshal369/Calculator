@@ -159,7 +159,7 @@ const Cal = () =>{
         <div className="cal-comp">
         <div className="cal-button-wrapper">
             
-            <input type="text" value={currentExp} />
+            <input type="text" value={currentExp} onChange={(e)=>currentExp} />
             <ButtonMaker calButton={calButton}/>
         </div>
         </div>
